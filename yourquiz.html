@@ -3,32 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personal Quiz</title>
+    <link href="yourquiz.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <input type="text" name="text" id="inputQuestion">
-    <button onclick="push()">Show</button>
+    <button class="show" onclick="push()">Show</button>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <p id="output"></p>
-    <script>
-
-var array = [];
-
-function push(){
-var inputQuestion = document.getElementById('inputQuestion').value;
-
-array.push(inputQuestion);
-
-var output = "";
-
-for(i=0; i < array.length; i++)
-{
-    output = output + array[i] + "<br>";
-}
-document.getElementById('output').innerHTML = output;
-}
-
-
-
-    </script>
+  
 </body>
+<script  src="yourquiz.js"></script>
 </html>

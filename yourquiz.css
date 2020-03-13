@@ -1,0 +1,48 @@
+body{
+    padding:0;
+    margin:0;
+    height:100vh;
+    width:100vw;
+    background:linear-gradient(to top left, #66b3ff,#a3d1ff,#66b3ff);
+    background: cover;
+    background-size: 100%;
+    overflow: hidden;
+}
+#inputQuestion{
+    margin-top: 25px;
+    margin-left: 25px;
+    width:30vw;
+    height:4vh;
+    text-indent: 10px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+}
+#inputQuestion:hover{
+    text-decoration: none;
+    transform: scale(1.010);
+}
+.show{
+    margin-top: 25px;
+    margin-left: 5px;
+    width:80px;
+    text-align: center;
+    text-decoration: none;
+    height:4vh;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 30px;
+    color:black;
+    border: none;
+    background-color: white;
+}
+.show:hover{
+    text-decoration: none;
+    transform: scale(1.05);
+}
+#output{
+    text-indent: 10px;
+    color:black;
+    font-size: 20px;
+}
