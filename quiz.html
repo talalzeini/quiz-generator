@@ -1,0 +1,69 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="quiz.css" type="text/css" rel="stylesheet">
+    <link href="yourquiz.css" type="text/css" rel="stylesheet">
+    <title>Simple Quiz</title>
+</head>
+
+<body>
+
+    <h1 id="quiz-button" class="fadeLeft hide"style= "color:white; position:absolute; top:270px;  font-weight: normal;">QUIZ</h1>
+    <h2 id="quiz-button2"  class="header hide" style= "color:white; position:absolute; top:50px; font-size: 40px; font-weight: normal;">QUIZ</h2>
+   <div id="first" class="">
+    <input type="text" name="text" id="inputQuestion">
+    <button class="shows" onclick="push()">Show</button>
+    
+    
+   </div>
+
+
+       <div id="content" class="container hide">
+
+      
+                <div id="question-container" class="hide">
+                    <h4 id = "headerf" style= "color:white;  bottom: 150px; font-size: 40px; font-weight: normal;" ">0</h4>
+                    <h4 style= "color:white; bottom: 150px; font-size: 40px; font-weight: normal;">Q<span id = "nb">1</span></h4>
+                    <button  onclick="window.location.href = 'quiz.html'" style=" background-color: transparent; border:none"><h4 style= "color:white; position:absolute; bottom: 220px; font-size: 40px; font-weight: normal;">MENU</h4></button>
+                   
+               
+                    <p style="font-size: 15px; max-width: 100px; padding:0px" id="output" class="btnquestion"> <button id="question" class="btnquestion"></button> </p>
+                   
+                    <div id="answer-buttons" class="btn-grid">
+                        
+                 
+                       <button class="btn"><p id="output"></p></button>
+                            <button  class="btn">Answer 2</button>
+                            <button  class="btn">Answer 3</button>
+                            <button " class="btn">Answer 4</button>
+                           
+                    </div>
+                </div>
+    
+
+                            <div class="controls">
+                
+                                        <button id="start-btn" class="start-btn btn fadeRight ">Start</button>
+                                        <button id="next-btn" class="next-btn btn hide fadeLeft">Next</button>
+                                        <button id="restart-btn" class="restart-btn btn hide fadeRight">Restart</button>
+                            </div>
+                            <button onclick="window.location.href = 'options.html'" id="quiz-options" class ="options btn fadeRight" style= " position:absolute; top:580px; font-size: 40px; font-weight: normal;">Options</button>
+                            
+                            
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        
+                            
+       </div>
+       <script  src="quiz.js"></script>
+</body>
+
+
+</html>

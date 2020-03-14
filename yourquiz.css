@@ -1,4 +1,4 @@
-body{
+/* body{
     padding:0;
     margin:0;
     height:100vh;
@@ -7,7 +7,8 @@ body{
     background: cover;
     background-size: 100%;
     overflow: hidden;
-}
+} */
+
 #inputQuestion{
     margin-top: 25px;
     margin-left: 25px;
@@ -22,8 +23,8 @@ body{
 #inputQuestion:hover{
     text-decoration: none;
     transform: scale(1.010);
-}
-.show{
+} 
+.shows{
     margin-top: 25px;
     margin-left: 5px;
     width:80px;
@@ -37,12 +38,13 @@ body{
     border: none;
     background-color: white;
 }
-.show:hover{
+.shows:hover{
     text-decoration: none;
     transform: scale(1.05);
 }
+/* }
 #output{
     text-indent: 10px;
     color:black;
     font-size: 20px;
-}
+
