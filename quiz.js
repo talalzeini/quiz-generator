@@ -135,8 +135,8 @@ var questions = [
 {
     question: document.getElementById('output').textContent,
     answers:[
-{ text:  document.getElementById('output').textContent, correct: true,},
-{ text:'26', correct : false},
+// { text:  document.getElementById('output').textContent, correct: true,},
+{ text:document.getElementById('answer1').textContent, correct : false},
 { text:'3', correct : false},
 { text:'12', correct : false}
     ]
@@ -149,10 +149,12 @@ var questions = [
 ]
  
 
-function push(){
- 
-var array = [];
-
+function pushing(){
+    var str = " ";
+    var c = document.getElementsByClassName("answer");
+    for(var i = 0 ; i < c.length ; i++){
+        console.log(c[i].value);
+    }
 
    const first =  document.getElementById('first');
    const second =  document.getElementById('content');
@@ -162,10 +164,10 @@ var array = [];
    first.classList.add('hide');
    second.classList.remove('hide');
 
+var array =[];
+
 var inputQuestion = document.getElementById('inputQuestion').value;
-
 array.push(inputQuestion);
-
 var output = "";
 
 for(i=0; i < array.length; i++)
@@ -174,7 +176,7 @@ for(i=0; i < array.length; i++)
     console.log(output);
 }
 document.getElementById('output').innerHTML = output;
-document.getElementById('output').innerHTML = output;
+
 
 }
 
