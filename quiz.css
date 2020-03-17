@@ -20,10 +20,7 @@ body{
 .container{
     width:500px;
     height: 500px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    max-width:90%;
+   
     background-color:rgba(1, 1, 1, 0.0);
     border-radius:50px;
     border-color: transparent;
@@ -31,12 +28,24 @@ body{
 .btnquestion{
     background-color:transparent;
     outline:none;
-    color: white;
+    color: black;
     width:800px;
     margin: auto;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+  
+    border-color: transparent;
+    padding:10px 20px;
+    border-radius:30px;
+    font-size: 40px;
+    animation: 2s fadeIn;
+}
+.btnquestion1{
+    background-color:transparent;
+    outline:none;
+    display: inline-block;
+    color:white;
+    width:800px;
+    margin: auto;
+  
     border-color: transparent;
     padding:10px 20px;
     border-radius:30px;
@@ -55,6 +64,9 @@ body{
    max-width: 50%;
    background-color: #66b3ff;
    outline:none;
+   display:flex;
+   align-items: center;
+   justify-content: center;
    width:800px;
    margin: auto;
    border-color: transparent;
@@ -64,6 +76,23 @@ body{
    animation: 2s fadeIn;
    transition: background-color 0.5s ease-in-out;
 }
+.btn1{
+    max-width: 50%;
+    background-color: transparent;
+    outline:none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:800px;
+    margin: auto;
+    border-color: transparent;
+    padding:10px 20px;
+    border-radius:30px;
+    color: white;
+    font-size: 40px;
+    animation: 2s fadeIn;
+    transition: background-color 0.5s ease-in-out;
+ }
 .btn:hover{
     background-color: white;
     transform: scale(1.05);
@@ -269,4 +298,70 @@ transform:none;
 -webkit-animation-name:fadeRight;
 animation-name:fadeRight; 
 animation: 3s fadeRight;   
+}
+
+
+input{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    border-radius: 50px;
+    border: none;
+    padding: 15px;
+    width: 400px;
+}
+.correct{
+background-color: green;
+}
+
+
+::placeholder{
+    color:black;
+
+}
+
+#inputQuestion{
+    margin-top: 25px;
+    margin-left: 25px;
+    width:30vw;
+    height:4vh;
+    text-indent: 10px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+}
+#inputQuestion:hover{
+    text-decoration: none;
+    transform: scale(1.010);
+} 
+.shows{
+    margin-top: 25px;
+    margin-left: 5px;
+    width:80px;
+    
+    text-align: center;
+    text-decoration: none;
+    height:4vh;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 30px;
+    color:black;
+    border: none;
+    background-color: white;
+}
+.shows:hover{
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
 }

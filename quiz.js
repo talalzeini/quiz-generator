@@ -38,7 +38,7 @@ currentQuestionIndex = 0;
 questionContainerElement.classList.remove('hide');
 number.innerText = 1;
 Header.innerText = 0;
-push();
+
 a = 1;
 b = 0;
 setNextQuestion()
@@ -125,59 +125,176 @@ while(answerButtonsElement.firstChild){
 }
 
 
-
-
-let output = "2+2";
-
-var thiss = document.getElementById('output').textContent;
-
 var questions = [    
-{
-    question: document.getElementById('output').textContent,
-    answers:[
-// { text:  document.getElementById('output').textContent, correct: true,},
-{ text:document.getElementById('answer1').textContent, correct : false},
-{ text:'3', correct : false},
-{ text:'12', correct : false}
-    ]
     
+        ]
+        
+    
+    var counter = 0;
+    var array = [];
+        function pushing(){
+        
+       
+            
+         
+         var inputQuestion = document.getElementById('inputQuestion').value;
+         var ans1 = document.getElementById('ans1').value;
+         var ans2 = document.getElementById('ans2').value;
+         var ans3 = document.getElementById('ans3').value;
+         var ans4 = document.getElementById('ans4').value;
+         array.push([inputQuestion,"question"]);
+         array.push([ans1,"correct"]);
+         array.push([ans2,"wrong"]);
+         array.push([ans3,"wrong"]);
+         array.push([ans4,"wrong"]);
+        // console.log(counter);
+         
+         
+         var output = "";
+         var answer1 = "";
+         var answer2 = "";
+         var answer3 = "";
+         var answer4 = "";
+         output =  output + array[counter][0];
+         counter++;
+        //  console.log(counter);
+         answer1 = answer1 + array[counter++][0] ;
+        //  console.log(counter);
+         answer2 = answer2 + array[counter++][0] ;
+        //  console.log(counter);
+         answer3 = answer3 + array[counter++][0] ;
+        //  console.log(counter);
+         answer4 = answer4 + array[counter++][0] ;
+        //  console.log(counter);
+        //  console.log(output)
+        //  console.log(array[1]);
+        //  console.log(array[2]);
+        //  console.log(array[3]);
+        //  console.log(array[4]);
+         document.getElementById('output').innerHTML = output;
+         document.getElementById('a1').innerHTML = answer1;
+         document.getElementById('a2').innerHTML = answer2;
+         document.getElementById('a3').innerHTML = answer3;
+         document.getElementById('a4').innerHTML = answer4;
 
-}
+        
+
+
+
+
+
+
+
+         document.getElementById('inputQuestion').value='';
+         document.getElementById('ans1').value='';
+         document.getElementById('ans2').value='';
+         document.getElementById('ans3').value='';
+         document.getElementById('ans4').value='';
+
+         for(var j = 0; j < array.length; j++){
+            console.log(array[j]);
+         }
+         }
          
-         
+
+
+
+
+
+// var c = document.getElementsByClassName("answer");
+// var str = "";
+// for(var i = 0 ; i < c.length ; i++){
    
-]
- 
+//     str = str + c[i];
+  
+// }
+// document.getElementById('number').textContent = c[0].value;
 
-function pushing(){
-    var str = " ";
-    var c = document.getElementsByClassName("answer");
-    for(var i = 0 ; i < c.length ; i++){
-        console.log(c[i].value);
-    }
+// document.getElementById('number').innerHTML = document.getElementById('number').textContent;
 
-   const first =  document.getElementById('first');
-   const second =  document.getElementById('content');
+// str = str + document.getElementById('number').innerHTML;
 
+// document.getElementById('number').innerHTML = str;
+
+// console.log(document.getElementById('number').innerHTML);
+// }
 
 
-   first.classList.add('hide');
-   second.classList.remove('hide');
-
-var array =[];
-
-var inputQuestion = document.getElementById('inputQuestion').value;
-array.push(inputQuestion);
-var output = "";
-
-for(i=0; i < array.length; i++)
+function start()
 {
-    output =   output + array[i] ;
-    console.log(output);
+
+var content = document.getElementById('content');
+var first = document.getElementById('first');
+
+
+content.classList.remove('hide');
+first.classList.add('hide');
+
+
+
+
+
+
+
 }
-document.getElementById('output').innerHTML = output;
 
+var q1 = document.getElementById('question1');
+var q2 = document.getElementById('question2');
+var q3 = document.getElementById('question3');
+var q4 = document.getElementById('question4');
+
+
+function nextQuestion(){
+    document.getElementById('output').innerHTML = '';
+    document.getElementById('a1').innerHTML = '';
+    document.getElementById('a2').innerHTML = '';
+    document.getElementById('a3').innerHTML = '';
+    document.getElementById('a4').innerHTML = '';
+
+    counter -= 10;
+    document.getElementById('output').innerHTML = array[counter++][0];
+    document.getElementById('a1').innerHTML = array[counter++][0];
+    document.getElementById('a2').innerHTML = array[counter++][0];
+    document.getElementById('a3').innerHTML = array[counter++][0];
+    document.getElementById('a4').innerHTML = array[counter++][0];
+     
+    q1.classList.remove('green');
+    q2.classList.remove('green');
+    q3.classList.remove('green');
+    q4.classList.remove('green');
+    q1.classList.remove('red');
+    q2.classList.remove('red');
+    q3.classList.remove('red');
+    q4.classList.remove('red');
 
 }
 
 
+
+
+
+function checkAnswer(){
+
+    if(array[counter-4][1] == "correct"){
+       q1.classList.add('green');
+    
+    }else if(array[counter-4][1] == "wrong"){
+        q1.classList.add('red');
+    }
+    if(array[counter-3][1] == "correct"){
+        q1.classList.add('green');
+    }else if(array[counter-3][1] == "wrong"){
+        q2.classList.add('red');
+    }
+    if(array[counter-2][1] == "correct"){
+        q1.classList.add('green');
+    }else if(array[counter-2][1] == "wrong"){
+        q3.classList.add('red'); 
+    }
+    if(array[counter-2][1] == "correct"){
+        q1.classList.add('green');
+    }else if(array[counter-2][1] == "wrong"){
+        q4.classList.add('red');
+    }
+   
+}
