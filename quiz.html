@@ -11,22 +11,25 @@
     <title>Simple Quiz</title>
 </head>
 
-<body>
-    <h1 id="quiz-button" class="fadeLeft hide"style= "color:white; position:absolute; top:270px;  font-weight: normal;">QUIZ</h1>
-    <h2 id="quiz-button2"  class="header hide" style= "color:white; position:absolute; top:50px; font-size: 40px; font-weight: normal;">QUIZ</h2>
+<body id="bg" class="b"> 
+
+   
    <div id="first" class="">
-    <input style="display: flex;align-items: center;justify-content: center;margin: 0 auto;margin-top: 25px;border-radius: 50px;border: none; padding: 10px;
-    width: 400px;" type="text" name="text" id="inputQuestion" placeholder="Please enter question...">
+    <p style="margin: 0 auto;margin-top: 25px;border-radius: 50px;text-align: center;padding: 20px; border:none; background-color:#66b3ff; animation: fadeInDownBig 3s; width:30vw; font-size:35px"text" name="text" >QUIZ</p>
+    <input  style="background-color: white; animation: fadeInDownBig 2.5s;"text" name="text" id="inputQuestion" placeholder="Please enter a question...">
+    <input style="animation: fadeInDownBig 2s;" class="correct" type="text" name="text" id="ans1" placeholder="Correct answer">
+    <input style="animation: fadeInDownBig 1.5s;"  type="text" name="text" id="ans2" placeholder="Wrong answer">
+    <input style="animation: fadeInDownBig 1.25s;"  type="text" name="text" id="ans3" placeholder="Wrong answer">
+    <input style="animation: fadeInDownBig 1s;"  type="text" name="text" id="ans4" placeholder="Wrong answer">
     <br>
-    <br>
-    <br>
-    <br>
-    <input class="correct" type="text" name="text" id="ans1" placeholder="Correct answer">
-    <input  type="text" name="text" id="ans2" placeholder="Wrong answer">
-    <input  type="text" name="text" id="ans3" placeholder="Wrong answer">
-    <input  type="text" name="text" id="ans4" placeholder="Wrong answer">
-    <button class="shows" onclick="pushing();">Add</button>
-    <button class="shows" onclick="start();">Start</button>
+
+
+    
+    <button  style="display: block; animation: fadeInDownBig 0.75s;" id="count" class="shows" onclick="pushing();">Add</button>
+    <button style="display: block; animation: fadeInDownBig 0.5s;" class="shows" onclick="start();">Start</button>
+
+
+  
     
     
    </div>
@@ -34,13 +37,14 @@
 
        <div id="content" class="container hide">
 
-      
+        
                 <div id="question-container" class="hide">
+                   
                     <!-- <h4 id = "headerf" style= "color:white;  bottom: 150px; font-size: 40px; font-weight: normal;" ">0</h4>
                     <h4 style= "color:white; bottom: 150px; font-size: 40px; font-weight: normal;">Q<span id = "nb">1</span></h4> -->
                     <!-- <button  onclick="window.location.href = 'quiz.html'" style=" background-color: transparent; border:none"><h4 style= "color:white; position:absolute; bottom: 220px; font-size: 40px; font-weight: normal;">MENU</h4></button>
                     -->
-              
+                  
                     <button id="question"  class="btn1"><p style="font-size: 25px;  padding:0px" id="output" class="btnquestion1"></p></button> 
                     <br>  
                     <br> 
@@ -58,12 +62,14 @@
                     <br> 
                     <button id="question4" onclick="checkAnswer()"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a4" class="btnquestion"></p></button>   
                     <button id="next-btn" class="next-btn btn fadeLeft" onclick="nextQuestion()">Next</button>
+                  
+
                 </div>
     
             
                             <div class="controls">
                 
-                                        <button id="start-btn" class="start-btn btn fadeRight ">Start</button>
+                                        <button id="start-btn" class="start-btn btn fadeRight " >Start</button>
                                         <button id="next-btn" class="next-btn btn hide fadeLeft">Next</button>
                                         <button id="restart-btn" class="restart-btn btn hide fadeRight">Restart</button>
                             </div>

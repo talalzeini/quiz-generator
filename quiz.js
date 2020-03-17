@@ -127,26 +127,48 @@ while(answerButtonsElement.firstChild){
 
 var questions = [    
     
-        ]
+        ]      
+
+
+        let q = 0;
         
+        var numberOfQuestions =  document.getElementById('count');
+        
+            
+
     
     var counter = 0;
     var array = [];
         function pushing(){
         
+        
        
+        q++;
+      
+         numberOfQuestions.innerText = "Add - " + q;
+  
             
-         
+
+                
+
+
+
          var inputQuestion = document.getElementById('inputQuestion').value;
          var ans1 = document.getElementById('ans1').value;
          var ans2 = document.getElementById('ans2').value;
          var ans3 = document.getElementById('ans3').value;
          var ans4 = document.getElementById('ans4').value;
          array.push([inputQuestion,"question"]);
-         array.push([ans1,"correct"]);
-         array.push([ans2,"wrong"]);
-         array.push([ans3,"wrong"]);
-         array.push([ans4,"wrong"]);
+        var answersArray = [];
+        answersArray.push([ans1,"correct"]);
+        answersArray.push([ans2,"wrong"]);
+        answersArray.push([ans3,"wrong"]);
+        answersArray.push([ans4,"wrong"]);
+        shuffle(answersArray);
+        for(var i = 0 ; i < answersArray.length ; i++){
+            array.push(answersArray[i]);
+            console.log(answersArray[i]);
+        }
         // console.log(counter);
          
          
@@ -244,7 +266,18 @@ var q3 = document.getElementById('question3');
 var q4 = document.getElementById('question4');
 
 
+
+var bg = document.getElementById('bg');
+
+
+
+// let nn = 0;
+// var n = document.getElementById("nb");
+
+
 function nextQuestion(){
+//     n.innerText = nn + "question number";
+// nn++;
     document.getElementById('output').innerHTML = '';
     document.getElementById('a1').innerHTML = '';
     document.getElementById('a2').innerHTML = '';
@@ -267,34 +300,96 @@ function nextQuestion(){
     q3.classList.remove('red');
     q4.classList.remove('red');
 
-}
 
+
+
+
+       
+           
+    // document.getElementById("question1").disabled = false;
+    // document.getElementById("question2").disabled = false;
+    // document.getElementById("question3").disabled = false;
+    // document.getElementById("question4").disabled = false;
+
+            
+
+    bg.classList.remove('gr');
+    bg.classList.remove('redd');
+    bg.classList.add('b');
+
+}
 
 
 
 
 function checkAnswer(){
 
+    bg.classList.remove('b');
+    bg.classList.add('redd');
+ 
+
     if(array[counter-4][1] == "correct"){
        q1.classList.add('green');
-    
     }else if(array[counter-4][1] == "wrong"){
         q1.classList.add('red');
     }
     if(array[counter-3][1] == "correct"){
-        q1.classList.add('green');
+        q2.classList.add('green');
+  
+     
     }else if(array[counter-3][1] == "wrong"){
         q2.classList.add('red');
+    
     }
     if(array[counter-2][1] == "correct"){
-        q1.classList.add('green');
+        q3.classList.add('green');
+    
+    
     }else if(array[counter-2][1] == "wrong"){
         q3.classList.add('red'); 
+ 
     }
-    if(array[counter-2][1] == "correct"){
-        q1.classList.add('green');
-    }else if(array[counter-2][1] == "wrong"){
+    if(array[counter-1][1] == "correct"){
+        q4.classList.add('green');
+
+       
+    }else if(array[counter-1][1] == "wrong"){
         q4.classList.add('red');
     }
-   
+
+
+  
+}
+
+
+
+ let cor = 0;
+
+var crc = document.getElementById("cr");
+
+
+function checkAnswer1(){
+    cor++;
+    crc.innerText = cor + "correct answers";
+    bg.classList.remove('redd');
+    bg.classList.remove('b');
+    bg.classList.add('gr');
+    q1.classList.add('green');
+    q2.classList.add('red');
+    q3.classList.add('red');
+    q4.classList.add('red');
+
+
+}
+
+
+
+
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
 }

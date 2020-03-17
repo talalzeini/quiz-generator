@@ -11,7 +11,7 @@ body{
     justify-content: center;
     height:100vh;
     width:100vw;
-    background:linear-gradient(to top left, #66b3ff,#a3d1ff,#66b3ff);
+  
     background: cover;
     background-size: 100%;
     overflow: hidden;
@@ -302,7 +302,7 @@ animation: 3s fadeRight;
 
 
 input{
-    background-color: red;
+    background-color: #ffad99;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,48 +310,66 @@ input{
     margin-top: 25px;
     border-radius: 50px;
     border: none;
-    padding: 15px;
-    width: 400px;
+    padding: 20px;
+    width:70vw;
+    border:5px solid #ffad99;
+    font-size: 16px;
+    font-weight: 700;
+    outline: none;
 }
+input:hover{
+    text-decoration: none;
+    
+    border:5px solid #f8a089;
+} 
 .correct{
-background-color: green;
+background-color: #80ffaa;
+border:5px solid #80ffaa;
+}
+.correct:hover{
+    border:5px solid #71f29c;
 }
 
 
 ::placeholder{
     color:black;
+    font-size: 16px;
+    letter-spacing: 2px;
+    
 
 }
 
 #inputQuestion{
+    background-color: #ffad99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     margin-top: 25px;
-    margin-left: 25px;
-    width:30vw;
-    height:4vh;
-    text-indent: 10px;
-    font-size: 15px;
-    border-radius: 30px;
-    border: none;
-    background-color: white;
+    border-radius: 50px;
+
+    border:5px solid white;
+    padding: 20px;
+    width:70vw;
 }
 #inputQuestion:hover{
     text-decoration: none;
-    transform: scale(1.010);
+
+    border:5px solid rgb(230, 230, 230);
+   
 } 
+
 .shows{
-    margin-top: 25px;
-    margin-left: 5px;
-    width:80px;
-    
-    text-align: center;
-    text-decoration: none;
-    height:4vh;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 30px;
-    color:black;
+    background-color: #ffad99;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 50px;
     border: none;
-    background-color: white;
+    padding: 15px;
+    width:20vw;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 .shows:hover{
     text-decoration: none;
@@ -360,8 +378,95 @@ background-color: green;
 
 
 .green{
-    background-color: green;
+    background-color: #80ffaa;
 }
 .red{
-    background-color: red;
+    background-color: #ffad99;
 }
+
+.gr{
+    background-color: #80ffaa;
+}
+
+.b{
+    background:linear-gradient(to top left, #66b3ff,#a3d1ff,#66b3ff);
+}
+.redd{
+    background-color: #ffad99;
+}
+
+
+
+
+
+
+
+@-webkit-keyframes fadeInUpBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 2000px, 0);
+      transform: translate3d(0, 2000px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInUpBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 2000px, 0);
+      transform: translate3d(0, 2000px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInUpBig {
+    -webkit-animation-name: fadeInUpBig;
+    animation-name: fadeInUpBig;
+  }
+
+
+
+@-webkit-keyframes fadeInDownBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -2000px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInDownBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -2000px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInDownBig {
+    -webkit-animation-name: fadeInDownBig;
+    animation-name: fadeInDownBig;
+  }
+  
+
