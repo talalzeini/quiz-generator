@@ -3,126 +3,16 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container')
 const Restart = document.getElementById('restart-btn');
 const QuizButton = document.getElementById('quiz-button');
-const QuizButton2 = document.getElementById('quiz-button2');
+
 const contentStart = document.getElementById('content');
 const Options = document.getElementById('quiz-options');
 const questionElement = document.getElementById('question')
 var Header = document.getElementById('headerf')
 var number = document.getElementById('nb')
 const answerButtonsElement = document.getElementById('answer-buttons')
-let shuffledQuestions, currentQuestionIndex
 
 
 
-let a = 1;
-startButton.addEventListener('click', startGame);
-Restart.addEventListener('click', startGame);
-nextButton.addEventListener('click', () => {
-currentQuestionIndex++;
-a++;
-number.innerText = a;
-setNextQuestion()
-})
-
-
-
-function startGame(){ 
-startButton.classList.add('hide');
-Restart.classList.add('hide');
-Options.classList.add('hide');
-contentStart.classList.add('show');
-QuizButton.classList.add('hide');
-QuizButton2.classList.remove('hide');
-shuffledQuestions = questions.sort(() => Math.random() - .5);
-currentQuestionIndex = 0;
-questionContainerElement.classList.remove('hide');
-number.innerText = 1;
-Header.innerText = 0;
-
-a = 1;
-b = 0;
-setNextQuestion()
-}
-
-
-
-function setNextQuestion()
-{
-resetState()
-
-showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
-let b = 0;
-
-function selectAnswer(e){
-    
-   
-const selectedButton = e.target
-const correct = selectedButton.dataset.correct
-setStatusClass(document.body, correct)
-Array.from(answerButtonsElement.children).forEach(button =>{
-    setStatusClass(button, button.dataset.correct)
-    button.disabled = true; 
-   
-if(correct){
-    b++;
-    Header.innerText = b/4;
-    number.innerText = a;
-}
-
-       
-})
-if(shuffledQuestions.length > currentQuestionIndex +1){
-nextButton.classList.remove('hide');
-}else{
-    Restart.classList.remove('hide')
-}
-}
-
-
-
-
-
-function setStatusClass(element, correct){
-    clearStatusClass(element)
-    if(correct)
-    {
-        element.classList.add('correct')
-    }else{
-        element.classList.add('wrong')
-    }
-}
-function clearStatusClass(element){
-        element.classList.remove('correct')
-        element.classList.remove('wrong')
-}
-function showQuestion(question){
-questionElement.innerText = question.question
-question.answers. forEach(answer => {
-    const button = document.createElement('button')
-    button.innerText = answer.text
-    button.classList.add('btn')
-    if (answer.correct){
-        button.dataset.correct = answer.correct 
-    }
-    button.addEventListener('click', selectAnswer)
-    answerButtonsElement.appendChild(button)
-})
-}
-
-
-
-
-
-function resetState(){
-clearStatusClass(document.body)
-nextButton.classList.add('hide')
-while(answerButtonsElement.firstChild){
-    answerButtonsElement.removeChild
-    (answerButtonsElement.firstChild)
-}
-}
 
 
 var questions = [    
@@ -254,7 +144,13 @@ first.classList.add('hide');
 
 
 
+startButton.classList.add('hide');
+Restart.classList.add('hide');
+Options.classList.add('hide');
+contentStart.classList.add('show');
+QuizButton.classList.add('hide');
 
+questionContainerElement.classList.remove('hide');
 
 
 
@@ -300,16 +196,11 @@ function nextQuestion(){
     q3.classList.remove('red');
     q4.classList.remove('red');
 
-
-
-
-
-       
            
-    // document.getElementById("question1").disabled = false;
-    // document.getElementById("question2").disabled = false;
-    // document.getElementById("question3").disabled = false;
-    // document.getElementById("question4").disabled = false;
+document.getElementById("question1").disabled = false;
+document.getElementById("question2").disabled = false;
+document.getElementById("question3").disabled = false;
+document.getElementById("question4").disabled = false;
 
             
 
@@ -319,14 +210,9 @@ function nextQuestion(){
 
 }
 
-
-
-
 function checkAnswer(){
 
-    bg.classList.remove('b');
-    bg.classList.add('redd');
- 
+   
 
     if(array[counter-4][1] == "correct"){
        q1.classList.add('green');
@@ -335,57 +221,26 @@ function checkAnswer(){
     }
     if(array[counter-3][1] == "correct"){
         q2.classList.add('green');
-  
-     
     }else if(array[counter-3][1] == "wrong"){
-        q2.classList.add('red');
-    
+        q2.classList.add('red'); 
     }
-    if(array[counter-2][1] == "correct"){
+     if(array[counter-2][1] == "correct"){
         q3.classList.add('green');
-    
-    
     }else if(array[counter-2][1] == "wrong"){
         q3.classList.add('red'); 
- 
     }
-    if(array[counter-1][1] == "correct"){
+   if(array[counter-1][1] == "correct"){
         q4.classList.add('green');
-
-       
     }else if(array[counter-1][1] == "wrong"){
         q4.classList.add('red');
     }
-
-
-  
-}
-
-
-
- let cor = 0;
-
-var crc = document.getElementById("cr");
-
-
-function checkAnswer1(){
-    cor++;
-    crc.innerText = cor + "correct answers";
-    bg.classList.remove('redd');
-    bg.classList.remove('b');
-    bg.classList.add('gr');
-    q1.classList.add('green');
-    q2.classList.add('red');
-    q3.classList.add('red');
-    q4.classList.add('red');
-
+   
+document.getElementById("question1").disabled = true;
+document.getElementById("question2").disabled = true;
+document.getElementById("question3").disabled = true;
+document.getElementById("question4").disabled = true;
 
 }
-
-
-
-
-
 function shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -393,3 +248,84 @@ function shuffle(a) {
     }
     return a;
 }
+
+var el_down = document.getElementById("GFG_DOWN"); 
+
+
+
+function GFG_click(clicked) { 
+ 
+
+   if(clicked == "question4")
+   {
+    if(array[counter-1][1] == "correct"){
+        q4.classList.add('green');
+        bg.classList.remove('b');
+        bg.classList.add('gr');
+        bg.classList.remove('redd');
+     
+    }else if(array[counter-1][1] == "wrong"){
+        q4.classList.add('red');
+        bg.classList.remove('b');
+        bg.classList.add('redd');
+        bg.classList.remove('gr');
+    }
+    console.log('q4 clicked');
+   }
+
+  else if(clicked == "question3")
+   {
+    if(array[counter-2][1] == "correct"){
+        q3.classList.add('green');
+        bg.classList.remove('b');
+        bg.classList.add('gr');
+        bg.classList.remove('redd');
+    }else if(array[counter-2][1] == "wrong"){
+        q3.classList.add('red'); 
+        bg.classList.remove('b');
+        bg.classList.add('redd');
+        bg.classList.remove('gr');
+    }
+     console.log('q3  clicked');
+    
+   }
+
+   else if(clicked == "question2")
+   {
+
+    if(array[counter-3][1] == "correct"){
+        q2.classList.add('green');
+        bg.classList.remove('b');
+        bg.classList.add('gr');
+        bg.classList.remove('redd');
+    }else if(array[counter-3][1] == "wrong"){
+        q2.classList.add('red'); 
+        bg.classList.remove('b');
+        bg.classList.add('redd');
+        bg.classList.remove('gr');
+    }
+    console.log('q2  clicked');
+   
+   }
+   else if(clicked == "question1")
+   {
+    if(array[counter-4][1] == "correct"){
+        q1.classList.add('green');
+        bg.classList.remove('b');
+        bg.classList.add('gr');
+        bg.classList.remove('redd');
+
+     }else if(array[counter-4][1] == "wrong"){
+         q1.classList.add('red');
+         bg.classList.remove('b');
+         bg.classList.add('redd');
+         bg.classList.remove('gr');
+     }
+    console.log('q1 clicked');
+     }
+   }
+
+
+  
+
+

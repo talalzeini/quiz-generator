@@ -26,7 +26,7 @@
 
     
     <button  style="display: block; animation: fadeInDownBig 0.75s;" id="count" class="shows" onclick="pushing();">Add</button>
-    <button style="display: block; animation: fadeInDownBig 0.5s;" class="shows" onclick="start();">Start</button>
+    <button style="display: block; animation: fadeInDownBig 0.5s;" class="shows" onclick="start()">Start</button>
 
 
   
@@ -38,7 +38,7 @@
        <div id="content" class="container hide">
 
         
-                <div id="question-container" class="hide">
+                <div id="question-container">
                    
                     <!-- <h4 id = "headerf" style= "color:white;  bottom: 150px; font-size: 40px; font-weight: normal;" ">0</h4>
                     <h4 style= "color:white; bottom: 150px; font-size: 40px; font-weight: normal;">Q<span id = "nb">1</span></h4> -->
@@ -51,16 +51,24 @@
                     <br> 
                     <br> 
                     
-                    <button  id="question1" onclick="checkAnswer()"  class="btn "><p style="font-size: 20px; max-width: 100px; padding:0px" id="a1" class="btnquestion"></p></button>   
+                    <button  id="question1" onclick="checkAnswer(); GFG_click(this.id)"   class="btn "><p style="font-size: 20px; max-width: 100px; padding:0px" id="a1" class="btnquestion"></p></button>   
                     <br> 
                     <br> 
-                    <button id="question2" onclick="checkAnswer()"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a2" class="btnquestion"></p></button>   
+                    <button id="question2" onclick="checkAnswer(); GFG_click(this.id)"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a2" class="btnquestion"></p></button>   
                     <br> 
                     <br> 
-                    <button id="question3" onclick="checkAnswer()"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a3" class="btnquestion"></p></button>   
+                    <button id="question3" onclick="checkAnswer(); GFG_click(this.id)"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a3" class="btnquestion"></p></button>   
                     <br> 
                     <br> 
-                    <button id="question4" onclick="checkAnswer()"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a4" class="btnquestion"></p></button>   
+                    <button id="question4" onclick="checkAnswer(); GFG_click(this.id)"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a4" class="btnquestion"></p></button>   
+
+                    <p id = "GFG_DOWN" style =  
+                        "color:green; font-size: 20px; font-weight: bold;"> 
+                    </p> 
+
+
+
+
                     <button id="next-btn" class="next-btn btn fadeLeft" onclick="nextQuestion()">Next</button>
                   
 
@@ -84,6 +92,8 @@
                             
        </div>
        <script  src="quiz.js"></script>
+
+       
 </body>
 
 
