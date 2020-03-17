@@ -210,37 +210,7 @@ document.getElementById("question4").disabled = false;
 
 }
 
-function checkAnswer(){
 
-   
-
-    if(array[counter-4][1] == "correct"){
-       q1.classList.add('green');
-    }else if(array[counter-4][1] == "wrong"){
-        q1.classList.add('red');
-    }
-    if(array[counter-3][1] == "correct"){
-        q2.classList.add('green');
-    }else if(array[counter-3][1] == "wrong"){
-        q2.classList.add('red'); 
-    }
-     if(array[counter-2][1] == "correct"){
-        q3.classList.add('green');
-    }else if(array[counter-2][1] == "wrong"){
-        q3.classList.add('red'); 
-    }
-   if(array[counter-1][1] == "correct"){
-        q4.classList.add('green');
-    }else if(array[counter-1][1] == "wrong"){
-        q4.classList.add('red');
-    }
-   
-document.getElementById("question1").disabled = true;
-document.getElementById("question2").disabled = true;
-document.getElementById("question3").disabled = true;
-document.getElementById("question4").disabled = true;
-
-}
 function shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -253,13 +223,16 @@ var el_down = document.getElementById("GFG_DOWN");
 
 
 
-function GFG_click(clicked) { 
+function checkAnswer(clicked) { 
  
 
    if(clicked == "question4")
    {
     if(array[counter-1][1] == "correct"){
         q4.classList.add('green');
+        q3.classList.add('red');
+        q2.classList.add('red');
+        q1.classList.add('red');
         bg.classList.remove('b');
         bg.classList.add('gr');
         bg.classList.remove('redd');
@@ -269,14 +242,41 @@ function GFG_click(clicked) {
         bg.classList.remove('b');
         bg.classList.add('redd');
         bg.classList.remove('gr');
+                    if(array[counter-2][1] == "correct"){
+                        q3.classList.add('green');
+                        q4.classList.add('red');
+                        q2.classList.add('red');
+                        q1.classList.add('red');
+                       
+                    }
+                    else if(array[counter-3][1] == "correct"){
+                        q2.classList.add('green');
+                        q3.classList.add('red');
+                        q4.classList.add('red');
+                        q1.classList.add('red');
+                   
+                    }
+                    else if(array[counter-4][1] == "correct"){
+                        q1.classList.add('green');
+                        q3.classList.add('red');
+                        q2.classList.add('red');
+                        q4.classList.add('red');
+                    
+                
+                     }
+                   
     }
-    console.log('q4 clicked');
+    console.log('answer4 was clicked');
    }
+
 
   else if(clicked == "question3")
    {
     if(array[counter-2][1] == "correct"){
         q3.classList.add('green');
+        q4.classList.add('red');
+        q2.classList.add('red');
+        q1.classList.add('red');
         bg.classList.remove('b');
         bg.classList.add('gr');
         bg.classList.remove('redd');
@@ -285,16 +285,44 @@ function GFG_click(clicked) {
         bg.classList.remove('b');
         bg.classList.add('redd');
         bg.classList.remove('gr');
-    }
-     console.log('q3  clicked');
+        if(array[counter-4][1] == "correct"){
+            q1.classList.add('green');
+            q3.classList.add('red');
+            q2.classList.add('red');
+            q4.classList.add('red');
+          
     
+         }
+        else if(array[counter-3][1] == "correct"){
+            q2.classList.add('green');
+            q3.classList.add('red');
+            q4.classList.add('red');
+            q1.classList.add('red');
+     
+        }
+        else if(array[counter-1][1] == "correct"){
+            q4.classList.add('green');
+            q3.classList.add('red');
+            q2.classList.add('red');
+            q1.classList.add('red');
+           
+         
+        }
+    }
+    console.log('answer3 was clicked');
    }
 
-   else if(clicked == "question2")
-   {
+
+
+
+
+else if(clicked == "question2"){
 
     if(array[counter-3][1] == "correct"){
         q2.classList.add('green');
+        q3.classList.add('red');
+        q4.classList.add('red');
+        q1.classList.add('red');
         bg.classList.remove('b');
         bg.classList.add('gr');
         bg.classList.remove('redd');
@@ -303,26 +331,81 @@ function GFG_click(clicked) {
         bg.classList.remove('b');
         bg.classList.add('redd');
         bg.classList.remove('gr');
+
+        if(array[counter-1][1] == "correct"){
+            q4.classList.add('green');
+            q3.classList.add('red');
+            q2.classList.add('red');
+            q1.classList.add('red');
+        
+         
+
+        }   else if(array[counter-3][1] == "correct"){
+            q2.classList.add('green');
+            q3.classList.add('red');
+            q4.classList.add('red');
+            q1.classList.add('red');
+         
+
+     }
+     else if(array[counter-4][1] == "correct"){
+        q1.classList.add('green');
+        q3.classList.add('red');
+        q2.classList.add('red');
+        q4.classList.add('red');
+
+      
+
+     }
+
+
+
     }
-    console.log('q2  clicked');
-   
-   }
+    console.log('answer2 was clicked');  
+}
+
    else if(clicked == "question1")
    {
     if(array[counter-4][1] == "correct"){
         q1.classList.add('green');
-        bg.classList.remove('b');
-        bg.classList.add('gr');
-        bg.classList.remove('redd');
+        q3.classList.add('red');
+        q2.classList.add('red');
+        q4.classList.add('red');
+     
 
      }else if(array[counter-4][1] == "wrong"){
          q1.classList.add('red');
          bg.classList.remove('b');
          bg.classList.add('redd');
          bg.classList.remove('gr');
+         if(array[counter-2][1] == "correct"){
+            q3.classList.add('green');
+            q4.classList.add('red');
+            q2.classList.add('red');
+            q1.classList.add('red');
+         
+        }
+        else if(array[counter-3][1] == "correct"){
+            q2.classList.add('green');
+            q3.classList.add('red');
+            q4.classList.add('red');
+            q1.classList.add('red');
+    
      }
-    console.log('q1 clicked');
+     else if(array[counter-1][1] == "correct"){
+        q4.classList.add('green');
+        q3.classList.add('red');
+        q2.classList.add('red');
+        q1.classList.add('red');
+    }
+     console.log('answer1 was clicked');
      }
+    }
+        
+document.getElementById("question1").disabled = true;
+document.getElementById("question2").disabled = true;
+document.getElementById("question3").disabled = true;
+document.getElementById("question4").disabled = true;
    }
 
 
