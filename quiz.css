@@ -146,6 +146,11 @@ body{
     animation: 2s fadeIn;
 
 }
+
+
+.block{
+    display: block;
+}
 .nextButton{
     font-size:2.5rem;
     margin: auto;

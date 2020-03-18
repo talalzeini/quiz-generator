@@ -6,6 +6,7 @@ var quizContent = document.getElementById('content');
 var nextButton = document.getElementById('nextButton');
 var numberOfQuestions =  document.getElementById('count');
 var correctVariable =  document.getElementById('correctAns');
+var startButton =  document.getElementById('startButton');
 var background = document.getElementById('background');
 var menuButton =  document.getElementById('menuBtn');
 var scoreText = document.getElementById('successext');
@@ -20,17 +21,52 @@ let correctAnswer = 0;
 let NbOfQuestions = 0;
 let NbOfQuestionCounter = 0;
 
+var nbOne = 0;
 function PushToArray(){
 
-// Keeping track of how many questions were entered
-NbOfQuestions++;
-numberOfQuestions.innerText = "Add - " + NbOfQuestions;
+if(nbOne < 1){ 
+    nbOne++;
+}
+if(nbOne == 1){
+startButton.classList.remove('hide');
+startButton.classList.add('block');
+}
 
 var inputQuestion = document.getElementById('inputQuestion').value;
 var inputAnswer1 = document.getElementById('inputAnswer1').value;
 var inputAnswer2 = document.getElementById('inputAnswer2').value;
 var inputAnswer3 = document.getElementById('inputAnswer3').value;
 var inputAnswer4 = document.getElementById('inputAnswer4').value;
+    
+if(inputQuestion.trim().length == 0 && inputAnswer1.trim().length == 0 && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+    window.alert('You must enter a question, a correct answer and at least one wrong answer.');
+    return;
+}
+else if(inputQuestion.trim().length == 0 && !inputAnswer1.trim().length == 0 && !(inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+    window.alert('You must enter a question.');
+return;
+}
+else if(inputAnswer1.trim().length == 0 && !inputQuestion.trim().length == 0 && !(inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+    window.alert('You must enter a correct answer.');
+    return;
+}
+else if(!inputQuestion.trim().length == 0 &&  !inputAnswer1.trim().length == 0  && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+    window.alert('You must enter at least one wrong answer.');
+    return;
+}
+else if(!inputQuestion.trim().length == 0 && inputAnswer1.trim().length == 0 && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+    window.alert('You must enter a correct answer and at least one wrong answer.');
+    return;
+}
+else if(inputQuestion.trim().length == 0 && !inputAnswer1.trim().length == 0 && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+    window.alert('You must enter a question and at least one wrong answer.');
+    return;
+}
+
+// Keeping track of how many questions were entered
+NbOfQuestions++;
+numberOfQuestions.innerText = "Add - " + NbOfQuestions;
+
 
 // Pushing question entered to array
 array.push([inputQuestion,"question"]);
@@ -117,6 +153,7 @@ if(NbOfQuestionCounter  == NbOfQuestions)
         console.log(correctAnswer + " vs " + NbOfQuestions/2)
         NbOfQuestions = 0 ;
         NbOfQuestionCounter  = 0;
+        nbOne = 0;
 }
 
 document.getElementById('questionText').innerHTML = '';
@@ -363,4 +400,4 @@ function shuffle(a)
             [a[i], a[j]] = [a[j], a[i]];
         }
         return a;
-}
+    }
