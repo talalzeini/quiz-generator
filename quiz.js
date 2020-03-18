@@ -14,6 +14,7 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
 
 
+let correctAnswer = 0;
 
 var questions = [    
     
@@ -135,12 +136,12 @@ var questions = [
 function start()
 {
 
-var content = document.getElementById('content');
-var first = document.getElementById('first');
 
 
-content.classList.remove('hide');
-first.classList.add('hide');
+var firsts = document.getElementById('firsts');
+
+firsts.classList.add('hide');
+
 
 
 
@@ -170,10 +171,37 @@ var bg = document.getElementById('bg');
 // let nn = 0;
 // var n = document.getElementById("nb");
 
+var n = 0;
 
 function nextQuestion(){
 //     n.innerText = nn + "question number";
 // nn++;
+
+n++;
+
+if(n == q){
+    q = 0 ;
+    numberOfQuestions.innerText = "Add";
+n = 0;
+
+    var content = document.getElementById('content');
+
+    var firsts = document.getElementById('firsts');
+    var crt =  document.getElementById('corAns');
+    var  menu =  document.getElementById('menu');
+    content.classList.add('hide');
+ 
+    firsts.classList.add('hide');
+    crt.classList.remove('hide');
+    menu.classList.remove('hide');
+
+contentStart.classList.remove('show');
+
+
+
+}
+var crt =  document.getElementById('corAns');
+
     document.getElementById('output').innerHTML = '';
     document.getElementById('a1').innerHTML = '';
     document.getElementById('a2').innerHTML = '';
@@ -223,8 +251,16 @@ var el_down = document.getElementById("GFG_DOWN");
 
 
 
+var crt =  document.getElementById('corAns');
+
+
+
+
 function checkAnswer(clicked) { 
  
+
+    
+    var crt =  document.getElementById('corAns');
 
    if(clicked == "question4")
    {
@@ -236,6 +272,8 @@ function checkAnswer(clicked) {
         bg.classList.remove('b');
         bg.classList.add('gr');
         bg.classList.remove('redd');
+    correctAnswer++;
+
      
     }else if(array[counter-1][1] == "wrong"){
         q4.classList.add('red');
@@ -280,6 +318,7 @@ function checkAnswer(clicked) {
         bg.classList.remove('b');
         bg.classList.add('gr');
         bg.classList.remove('redd');
+        correctAnswer++;
     }else if(array[counter-2][1] == "wrong"){
         q3.classList.add('red'); 
         bg.classList.remove('b');
@@ -326,6 +365,7 @@ else if(clicked == "question2"){
         bg.classList.remove('b');
         bg.classList.add('gr');
         bg.classList.remove('redd');
+        correctAnswer++;
     }else if(array[counter-3][1] == "wrong"){
         q2.classList.add('red'); 
         bg.classList.remove('b');
@@ -371,6 +411,10 @@ else if(clicked == "question2"){
         q3.classList.add('red');
         q2.classList.add('red');
         q4.classList.add('red');
+        bg.classList.remove('b');
+        bg.classList.add('gr');
+        bg.classList.remove('redd');
+        correctAnswer++;
      
 
      }else if(array[counter-4][1] == "wrong"){
@@ -383,6 +427,7 @@ else if(clicked == "question2"){
             q4.classList.add('red');
             q2.classList.add('red');
             q1.classList.add('red');
+ 
          
         }
         else if(array[counter-3][1] == "correct"){
@@ -390,6 +435,7 @@ else if(clicked == "question2"){
             q3.classList.add('red');
             q4.classList.add('red');
             q1.classList.add('red');
+ 
     
      }
      else if(array[counter-1][1] == "correct"){
@@ -406,9 +452,12 @@ document.getElementById("question1").disabled = true;
 document.getElementById("question2").disabled = true;
 document.getElementById("question3").disabled = true;
 document.getElementById("question4").disabled = true;
+crt.innerText = "You got " + correctAnswer + " correct answers out of " + q;
    }
 
 
   
-
-
+ 
+function reloadButton(){
+    location.reload();
+}

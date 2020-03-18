@@ -14,10 +14,14 @@
 <body id="bg" class="b"> 
 
    
-   <div id="first" class="">
+   <div id="first">
+    <p class="hide" id="corAns"style="margin: 0 auto;margin-top: 25px;border-radius: 50px;text-align: center;padding: 20px; border:none; background-color:#66b3ff; animation: fadeInDownBig 1s; width:30vw; font-size:35px"text" name="text" >QUIZ</p>
+    <button onclick=reloadButton(); class="hide" id="menu"style="margin: 0 auto;margin-top: 25px;border-radius: 50px;text-align: center;padding: 20px; border:none; background-color:#66b3ff; animation: fadeInDownBig 1s; width:30vw; font-size:35px"text" name="text" >MENU</button>
+    <span id="firsts" class="">
     <p style="margin: 0 auto;margin-top: 25px;border-radius: 50px;text-align: center;padding: 20px; border:none; background-color:#66b3ff; animation: fadeInDownBig 3s; width:30vw; font-size:35px"text" name="text" >QUIZ</p>
     <input  style="background-color: white; animation: fadeInDownBig 2.5s;"text" name="text" id="inputQuestion" placeholder="Please enter a question...">
     <input style="animation: fadeInDownBig 2s;" class="correct" type="text" name="text" id="ans1" placeholder="Correct answer">
+    
     <input style="animation: fadeInDownBig 1.5s;"  type="text" name="text" id="ans2" placeholder="Wrong answer">
     <input style="animation: fadeInDownBig 1.25s;"  type="text" name="text" id="ans3" placeholder="Wrong answer">
     <input style="animation: fadeInDownBig 1s;"  type="text" name="text" id="ans4" placeholder="Wrong answer">
@@ -28,7 +32,7 @@
     <button  style="display: block; animation: fadeInDownBig 0.75s;" id="count" class="shows" onclick="pushing();">Add</button>
     <button style="display: block; animation: fadeInDownBig 0.5s;" class="shows" onclick="start()">Start</button>
 
-
+</span>
   
     
     
@@ -62,15 +66,13 @@
                     <br> 
                     <button id="question4" onclick="checkAnswer(this.id);"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="a4" class="btnquestion"></p></button>   
 
-                    <p id = "GFG_DOWN" style =  
-                        "color:green; font-size: 20px; font-weight: bold;"> 
-                    </p> 
+                    
 
 
 
 
                     <button id="next-btn" class="next-btn btn fadeLeft" onclick="nextQuestion()">Next</button>
-                  
+                 
 
                 </div>
     
