@@ -146,7 +146,7 @@ body{
     animation: 2s fadeIn;
 
 }
-.next-btn{
+.nextButton{
     font-size:2.5rem;
     margin: auto;
     position: fixed;
@@ -159,19 +159,7 @@ body{
     width:400px;
     animation: 2s fadeIn;
 }
-.restart-btn{
-    font-size:2.5rem;
-    margin: auto;
-    position: fixed;
-    bottom:50px;
-    right: 50px;
-    left: 50px;
-    text-align: center; 
-    align-items: center;
-    justify-content: center;
-    width:400px;
-    animation: 2s fadeIn;
-}
+
 h1{
     padding:10px 20px;
     border-radius:30px;
@@ -384,15 +372,8 @@ border:5px solid #80ffaa;
     background-color: #ffad99;
 }
 
-.gr{
-    background-color: #80ffaa;
-}
-
-.b{
+.blue{
     background:linear-gradient(to top left, #66b3ff,#a3d1ff,#66b3ff);
-}
-.redd{
-    background-color: #ffad99;
 }
 
 
