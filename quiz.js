@@ -21,16 +21,10 @@ let correctAnswer = 0;
 let NbOfQuestions = 0;
 let NbOfQuestionCounter = 0;
 
-var nbOne = 0;
 function PushToArray(){
 
-if(nbOne < 1){ 
-    nbOne++;
-}
-if(nbOne == 1){
-startButton.classList.remove('hide');
-startButton.classList.add('block');
-}
+    
+
 
 var inputQuestion = document.getElementById('inputQuestion').value;
 var inputAnswer1 = document.getElementById('inputAnswer1').value;
@@ -66,6 +60,11 @@ else if(inputQuestion.trim().length == 0 && !inputAnswer1.trim().length == 0 && 
 // Keeping track of how many questions were entered
 NbOfQuestions++;
 numberOfQuestions.innerText = "Add - " + NbOfQuestions;
+
+if( NbOfQuestions >= 1){
+    startButton.classList.remove('hide');
+    startButton.classList.add('block');
+    }
 
 
 // Pushing question entered to array
@@ -114,7 +113,6 @@ document.getElementById('inputAnswer3').value='';
 document.getElementById('inputAnswer4').value='';
 
 }
-
 function StartQuiz()
 {
 mainInputs.classList.add('hide');
@@ -150,7 +148,7 @@ if(NbOfQuestionCounter  == NbOfQuestions)
             background.classList.remove('red');
             successText.classList.remove('hide');
         }
-        console.log(correctAnswer + " vs " + NbOfQuestions/2)
+
         NbOfQuestions = 0 ;
         NbOfQuestionCounter  = 0;
         nbOne = 0;
