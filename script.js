@@ -1,23 +1,23 @@
 var counter = 0;
 var array = [];
-
+var inputs = document.getElementById('inputs');
 var mainInputs = document.getElementById('mainInputs');
 var quizContent = document.getElementById('content');
 var nextButton = document.getElementById('nextButton');
 var numberOfQuestions =  document.getElementById('count');
-var correctVariable =  document.getElementById('correctAns');
+var correctVariable =  document.getElementById('correctAnswers');
 var startButton =  document.getElementById('startButton');
 var background = document.getElementById('background');
 var menuButton =  document.getElementById('menuBtn');
 var scoreText = document.getElementById('successext');
-var failText = document.getElementById('failText');
+var failTitle = document.getElementById('failTitle');
 
-var answerButton1 = document.getElementById('answerBtn1');
-var answerButton2 = document.getElementById('answerBtn2');
-var answerButton3 = document.getElementById('answerBtn3');
-var answerButton4 = document.getElementById('answerBtn4');
+var answerButton1 = document.getElementById('answer1');
+var answerButton2 = document.getElementById('answer2');
+var answerButton3 = document.getElementById('answer3');
+var answerButton4 = document.getElementById('answer4');
 
-let correctAnswer = 0;
+let correctAnswerswer = 0;
 let NbOfQuestions = 0;
 let NbOfQuestionCounter = 0;
 
@@ -27,39 +27,39 @@ function PushToArray(){
 
 
 var inputQuestion = document.getElementById('inputQuestion').value;
-var inputAnswer1 = document.getElementById('inputAnswer1').value;
-var inputAnswer2 = document.getElementById('inputAnswer2').value;
-var inputAnswer3 = document.getElementById('inputAnswer3').value;
-var inputAnswer4 = document.getElementById('inputAnswer4').value;
+var input1 = document.getElementById('input1').value;
+var input2 = document.getElementById('input2').value;
+var input3 = document.getElementById('input3').value;
+var input4 = document.getElementById('input4').value;
     
-if(inputQuestion.trim().length == 0 && inputAnswer1.trim().length == 0 && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+if(inputQuestion.trim().length == 0 && input1.trim().length == 0 && (input2.trim().length == 0 && input3.trim().length == 0 && input4.trim().length == 0)){
     window.alert('You must enter a question, a correct answer and at least one wrong answer.');
     return;
 }
-else if(inputQuestion.trim().length == 0 && !inputAnswer1.trim().length == 0 && !(inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+else if(inputQuestion.trim().length == 0 && !input1.trim().length == 0 && !(input2.trim().length == 0 && input3.trim().length == 0 && input4.trim().length == 0)){
     window.alert('You must enter a question.');
 return;
 }
-else if(inputAnswer1.trim().length == 0 && !inputQuestion.trim().length == 0 && !(inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+else if(input1.trim().length == 0 && !inputQuestion.trim().length == 0 && !(input2.trim().length == 0 && input3.trim().length == 0 && input4.trim().length == 0)){
     window.alert('You must enter a correct answer.');
     return;
 }
-else if(!inputQuestion.trim().length == 0 &&  !inputAnswer1.trim().length == 0  && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+else if(!inputQuestion.trim().length == 0 &&  !input1.trim().length == 0  && (input2.trim().length == 0 && input3.trim().length == 0 && input4.trim().length == 0)){
     window.alert('You must enter at least one wrong answer.');
     return;
 }
-else if(!inputQuestion.trim().length == 0 && inputAnswer1.trim().length == 0 && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+else if(!inputQuestion.trim().length == 0 && input1.trim().length == 0 && (input2.trim().length == 0 && input3.trim().length == 0 && input4.trim().length == 0)){
     window.alert('You must enter a correct answer and at least one wrong answer.');
     return;
 }
-else if(inputQuestion.trim().length == 0 && !inputAnswer1.trim().length == 0 && (inputAnswer2.trim().length == 0 && inputAnswer3.trim().length == 0 && inputAnswer4.trim().length == 0)){
+else if(inputQuestion.trim().length == 0 && !input1.trim().length == 0 && (input2.trim().length == 0 && input3.trim().length == 0 && input4.trim().length == 0)){
     window.alert('You must enter a question and at least one wrong answer.');
     return;
 }
 
 // Keeping track of how many questions were entered
 NbOfQuestions++;
-numberOfQuestions.innerText = "Add - " + NbOfQuestions;
+numberOfQuestions.innerText = "Add • " + NbOfQuestions;
 
 if( NbOfQuestions >= 1){
     startButton.classList.remove('hide');
@@ -73,10 +73,10 @@ array.push([inputQuestion,"question"]);
 var answersArray = [];
 
 // Pushing answers entered to array
-answersArray.push([inputAnswer1,"correct"]);
-answersArray.push([inputAnswer2,"wrong"]);
-answersArray.push([inputAnswer3,"wrong"]);
-answersArray.push([inputAnswer4,"wrong"]);
+answersArray.push([input1,"correct"]);
+answersArray.push([input2,"wrong"]);
+answersArray.push([input3,"wrong"]);
+answersArray.push([input4,"wrong"]);
 
 // Shuffling
 shuffle(answersArray); // Function on line 379 
@@ -107,52 +107,48 @@ document.getElementById('answerText4').innerHTML = answer4;
 
 // Empty Inputs
 document.getElementById('inputQuestion').value='';
-document.getElementById('inputAnswer1').value='';
-document.getElementById('inputAnswer2').value='';
-document.getElementById('inputAnswer3').value='';
-document.getElementById('inputAnswer4').value='';
+document.getElementById('input1').value='';
+document.getElementById('input2').value='';
+document.getElementById('input3').value='';
+document.getElementById('input4').value='';
 
 }
-function StartQuiz()
-{
-mainInputs.classList.add('hide');
-quizContent.classList.remove('hide');
-quizContent.classList.add('show');
+function StartQuiz(){
+    inputs.classList.add("hide")
+    startButton.classList.add("hide")
+    startButton.classList.remove("block")
+    console.log("Started Quiz")
+    mainInputs.classList.add('hide');
+    mainInputs.classList.remove('block');
+    quizContent.classList.remove('hide');
+    quizContent.classList.add('show');
 }
 
 function nextQuestion(){
-
-NbOfQuestionCounter++;
-
-if(NbOfQuestionCounter  == NbOfQuestions)
-{
-        
-
-        numberOfQuestions.innerText = "Add";
-
-        correctVariable.classList.remove('hide');
-        menuButton.classList.remove('hide');
-        quizContent.classList.add('hide');
-        quizContent.classList.remove('show');
-        nextButton.classList.add('hide');
-
-        if(correctAnswer <= NbOfQuestions/2){
-            background.classList.add('red');
-            background.classList.remove('green');
-            background.classList.remove('blue');
-            failText.classList.remove('hide');
-        }
-        else if(correctAnswer > NbOfQuestions/2){ 
-            background.classList.add('green');
-            background.classList.remove('blue');
-            background.classList.remove('red');
-            successText.classList.remove('hide');
-        }
-
-        NbOfQuestions = 0 ;
-        NbOfQuestionCounter  = 0;
-        nbOne = 0;
-}
+    NbOfQuestionCounter++;
+    if(NbOfQuestionCounter  == NbOfQuestions){
+            numberOfQuestions.innerText = "Add";
+            inputs.classList.remove("hide")
+            correctVariable.classList.remove('hide');
+            menuButton.classList.remove('hide');
+            quizContent.classList.add('hide');
+            quizContent.classList.remove('show');
+            nextButton.classList.add('hidden');
+                if(correctAnswerswer <= NbOfQuestions/2){
+                    background.classList.add('red');
+                    background.classList.remove('green');
+                    background.classList.remove('black');
+                    failTitle.classList.remove('hide');
+                }else if(correctAnswerswer > NbOfQuestions/2){ 
+                    background.classList.add('green');
+                    background.classList.remove('black');
+                    background.classList.remove('red');
+                    successTitle.classList.remove('hide');
+                }
+            NbOfQuestions = 0 ;
+            NbOfQuestionCounter  = 0;
+            nbOne = 0;
+    }
 
 document.getElementById('questionText').innerHTML = '';
 document.getElementById('answerText1').innerHTML = '';
@@ -177,22 +173,22 @@ answerButton3.classList.remove('red');
 answerButton4.classList.remove('red');
 
 // Enabling buttons
-document.getElementById("answerBtn1").disabled = false;
-document.getElementById("answerBtn2").disabled = false;
-document.getElementById("answerBtn3").disabled = false;
-document.getElementById("answerBtn4").disabled = false;
+document.getElementById("answer1").disabled = false;
+document.getElementById("answer2").disabled = false;
+document.getElementById("answer3").disabled = false;
+document.getElementById("answer4").disabled = false;
 
 background.classList.remove('green');
 background.classList.remove('red');
-background.classList.add('blue');
+background.classList.add('black');
 
 }
 
 function checkAnswer(clicked) { 
 
-nextButton.classList.remove('hide');
+nextButton.classList.remove('hidden');
 
-if(clicked == "answerBtn4")
+if(clicked == "answer4")
 {
         if(array[counter-1][1] == "correct")
         {
@@ -200,15 +196,15 @@ if(clicked == "answerBtn4")
                 answerButton3.classList.add('red');
                 answerButton2.classList.add('red');
                 answerButton1.classList.add('red');
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('green');
                 background.classList.remove('red');
-                correctAnswer++;
+                correctAnswerswer++;
 
         }else if(array[counter-1][1] == "wrong")
         {
                 answerButton4.classList.add('red');
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('red');
                 background.classList.remove('green');
 
@@ -237,7 +233,7 @@ if(clicked == "answerBtn4")
         }
 // console.log('Answer 4 was clicked');
 
-}else if(clicked == "answerBtn3")
+}else if(clicked == "answer3")
 {
         if(array[counter-2][1] == "correct")
         {
@@ -245,15 +241,15 @@ if(clicked == "answerBtn4")
                 answerButton4.classList.add('red');
                 answerButton2.classList.add('red');
                 answerButton1.classList.add('red');
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('green');
                 background.classList.remove('red');
-                correctAnswer++;
+                correctAnswerswer++;
 
         }else if(array[counter-2][1] == "wrong")
         {
                 answerButton3.classList.add('red'); 
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('red');
                 background.classList.remove('green');
 
@@ -282,7 +278,7 @@ if(clicked == "answerBtn4")
         }
 // console.log('answer3 was clicked');
 
-}else if(clicked == "answerBtn2")
+}else if(clicked == "answer2")
 {
 
         if(array[counter-3][1] == "correct")
@@ -291,15 +287,15 @@ if(clicked == "answerBtn4")
                 answerButton3.classList.add('red');
                 answerButton4.classList.add('red');
                 answerButton1.classList.add('red');
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('green');
                 background.classList.remove('red');
-                correctAnswer++;
+                correctAnswerswer++;
 
         }else if(array[counter-3][1] == "wrong")
         {
                 answerButton2.classList.add('red'); 
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('red');
                 background.classList.remove('green');
 
@@ -328,7 +324,7 @@ if(clicked == "answerBtn4")
         }
 // console.log('answer2 was clicked');
 
-}else if(clicked == "answerBtn1")
+}else if(clicked == "answer1")
 {
         if(array[counter-4][1] == "correct")
         {
@@ -336,15 +332,15 @@ if(clicked == "answerBtn4")
                 answerButton3.classList.add('red');
                 answerButton2.classList.add('red');
                 answerButton4.classList.add('red');
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('green');
                 background.classList.remove('red');
-                correctAnswer++;
+                correctAnswerswer++;
 
         }else if(array[counter-4][1] == "wrong")
         {
                 answerButton1.classList.add('red');
-                background.classList.remove('blue');
+                background.classList.remove('black');
                 background.classList.add('red');
                 background.classList.remove('green');
 
@@ -375,12 +371,12 @@ if(clicked == "answerBtn4")
 }
 
 // Disabling buttons
-document.getElementById("answerBtn1").disabled = true;
-document.getElementById("answerBtn2").disabled = true;
-document.getElementById("answerBtn3").disabled = true;
-document.getElementById("answerBtn4").disabled = true;
+document.getElementById("answer1").disabled = true;
+document.getElementById("answer2").disabled = true;
+document.getElementById("answer3").disabled = true;
+document.getElementById("answer4").disabled = true;
 
-correctVariable.innerText = correctAnswer + " out of " + NbOfQuestions;
+correctVariable.innerText = correctAnswerswer + " out of " + NbOfQuestions;
 
 }
 
@@ -398,4 +394,4 @@ function shuffle(a)
             [a[i], a[j]] = [a[j], a[i]];
         }
         return a;
-    }
+}

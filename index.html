@@ -3,57 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="quiz.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
     <title>Quiz Generator</title>
 </head>
 
-<body id="background" class="blue"> 
+<body id="background" class="black"> 
+    <div id="inputs">
+            <!-- Score starts here -->
+            <p id="successTitle" class='mainBtns hide' name="text">Success</p>
+            <p id="failTitle" class='mainBtns hide'    name="text">Fail</p>
+            <p id="correctAnswers" class='mainBtns hide'  name="text">0</p>
+            <!-- Score ends here --> 
 
-<div id="inputs">
-<!-- Score starts here -->
-        <p class="hide" id="successText" name="text" >Success</p>
-        <p class="hide" id="failText" name="text" >Fail</p>
-        <p class="hide" id="correctAns" name="text" >0</p>
-<!-- Score ends here --> 
-
-<!-- Menu starts here -->
-        <button onclick=reloadButton(); class="hide btn" id="menuBtn" name="text" >MENU</button>
-        <br>
-<!-- Menu starts here -->
-    <span id="mainInputs" class="">
-        <p class="quizText"name="text" >QUIZ</p>
-        <input  style="background-color: white; animation: fadeInDownBig 2.5s;"text" name="text" id="inputQuestion" placeholder="Please enter a question..." required>
-        <input style="animation: fadeInDownBig 2s;" class="correct" type="text" name="text" id="inputAnswer1" placeholder="Correct answer">   
-        <input style="animation: fadeInDownBig 1.5s;"  type="text" name="text" id="inputAnswer2" placeholder="Wrong answer">
-        <input style="animation: fadeInDownBig 1.25s;"  type="text" name="text" id="inputAnswer3" placeholder="Wrong answer">
-        <input style="animation: fadeInDownBig 1s;"  type="text" name="text" id="inputAnswer4" placeholder="Wrong answer">
-        <br> 
-        <button  style="display: block; animation: fadeInDownBig 0.75s;" id="count" class="shows" onclick="PushToArray();">Add</button>
-        <button style=" animation: fadeInUpBig 1s;" class="shows hide" id="startButton" onclick="StartQuiz()">Start</button>
-    </span>
-</div>
-
+            <!-- Menu starts here -->
+            <p onclick="reloadButton()"; class="mainBtns hide" id="menuBtn" name="text">New Quiz</p>
+            <!-- Menu ends here -->
+            <div id="mainInputs" class='block'>
+                <p class="quizTitle"name="text">QUIZ</p>
+                <input type="text" name="text" id="inputQuestion" placeholder="Please enter a question..." required class='question'>
+                <input type="text" name="text" id="input1" placeholder="Correct answer" class="correct"    required>   
+                <input type="text" name="text" id="input2" placeholder="Wrong answer"   class="wrong"      required>
+                <input type="text" name="text" id="input3" placeholder="Wrong answer"   class="wrong"      required>
+                <input type="text" name="text" id="input4" placeholder="Wrong answer"   class="wrong"      required>
+                <button id="count" class="mainBtns block" onclick="PushToArray();">Add</button>
+                <button class="mainBtns hide" id="startButton" onclick="StartQuiz()">Start</button>
+            </div>
+    </div>
 <div id="content" class="container hide">
-        <div id="question-container">
-            <button id="question"  class="btn1"><p style="font-size: 25px;  padding:0px" id="questionText" class="btnquestion1"></p></button> 
-            <br>  
-            <br> 
-            <br> 
-            <br> 
-            <button  id="answerBtn1" onclick="checkAnswer(this.id);"   class="btn "><p style="font-size: 20px; max-width: 100px; padding:0px" id="answerText1" class="btnquestion"></p></button>   
-            <br> 
-            <br> 
-            <button id="answerBtn2" onclick="checkAnswer(this.id);"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="answerText2" class="btnquestion"></p></button>   
-            <br> 
-            <br> 
-            <button id="answerBtn3" onclick="checkAnswer(this.id);"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="answerText3" class="btnquestion"></p></button>   
-            <br> 
-            <br> 
-            <button id="answerBtn4" onclick="checkAnswer(this.id);"   class="btn"><p style="font-size: 20px; max-width: 100px; padding:0px" id="answerText4" class="btnquestion"></p></button>   
-            <button id="nextButton" class="nextButton btn fadeLeft hide" onclick="nextQuestion()">Next</button>
-        </div>             
+            <p class="quizTitle" name="text">QUIZ</p>
+            <button id="question" class="question"><p id="questionText" class="btnquestion">?</p></button> 
+            <button id="answer1" onclick="checkAnswer(this.id);" class="ansBtns"><p id="answerText1"  class="btnquestion">Answer</p></button>   
+            <button id="answer2" onclick="checkAnswer(this.id);" class="ansBtns"><p id="answerText2"  class="btnquestion">Answer</p></button>   
+            <button id="answer3" onclick="checkAnswer(this.id);" class="ansBtns"><p id="answerText3"  class="btnquestion">Answer</p></button>   
+            <button id="answer4" onclick="checkAnswer(this.id);" class="ansBtns"><p id="answerText4"  class="btnquestion">Answer</p></button>   
+            <button id="nextButton" class="mainBtns hidden" onclick="nextQuestion()">Next</button>
+            <button class="mainBtns hidden"  onclick="StartQuiz()">Start</button>
 </div>
 
-<script src="quiz.js"></script>    
+<script src="script.js"></script>    
 </body>
 </html>
