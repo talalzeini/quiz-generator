@@ -10,14 +10,13 @@
 <body id="background" class="black"> 
     <div id="inputs">
             <!-- Score starts here -->
-            <p id="successTitle" class='mainBtns hide' name="text">Success</p>
-            <p id="failTitle" class='mainBtns hide'    name="text">Fail</p>
-            <p id="correctAnswers" class='mainBtns hide'  name="text">0</p>
-            <!-- Score ends here --> 
-
-            <!-- Menu starts here -->
-            <p onclick="reloadButton()"; class="mainBtns hide" id="menuBtn" name="text">New Quiz</p>
-            <!-- Menu ends here -->
+            <div style='width:90%;margin:0 auto; display:block;'>
+                <p id="successTitle" class='mainBtns hide' name="text">Success</p>
+                <p id="failTitle" class='mainBtns hide'    name="text">Fail</p>
+                <p id="correctAnswers" class='mainBtns hide'  name="text">0</p>
+                <p onclick="reloadButton()"; class="mainBtns hide" id="menuBtn" name="text">New Quiz</p>
+            </div>
+            <!-- Score ends here -->
             <div id="mainInputs" class='block'>
                 <p class="quizTitle"name="text">QUIZ</p>
                 <input type="text" name="text" id="inputQuestion" placeholder="Please enter a question..." required class='question'>
