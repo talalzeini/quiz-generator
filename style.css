@@ -12,6 +12,7 @@ body {
   width: 100vw;
   background: cover;
   background-size: 100%;
+  overflow: hidden;
 }
 /* 
 COLORS
