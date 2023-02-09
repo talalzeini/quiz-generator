@@ -1,5 +1,6 @@
 body {
   background-color: #ff9999;
+  overflow: hidden;
 }
 * {
   font-family: "Avenir";
