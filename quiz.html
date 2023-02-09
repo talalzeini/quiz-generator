@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <title>Quiz Generator</title>
+  </head>
+
+  <body id="background" class="black">
+    <div id="inputs">
+      <div style="width: 90%; margin: 0 auto; display: block">
+        <p id="successTitle" class="mainBtns hide" name="text">Success</p>
+        <p id="failTitle" class="mainBtns hide" name="text">Fail</p>
+        <p id="correctAnswers" class="mainBtns hide" name="text">0</p>
+        <p
+          onclick="reloadButton()"
+          ;
+          class="mainBtns hide"
+          id="menuBtn"
+          name="text"
+        >
+          New Quiz
+        </p>
+      </div>
+      <div id="mainInputs" class="block">
+        <p class="quizTitle" name="text">QUIZ</p>
+        <input
+          type="text"
+          name="text"
+          id="inputQuestion"
+          placeholder="Please enter a question..."
+          required
+          class="question"
+        />
+        <input
+          type="text"
+          name="text"
+          id="input1"
+          placeholder="Correct Answer"
+          class="correct"
+          required
+        />
+        <input
+          type="text"
+          name="text"
+          id="input2"
+          placeholder="Wrong Answer"
+          class="wrong"
+          required
+        />
+        <input
+          type="text"
+          name="text"
+          id="input3"
+          placeholder="Wrong Answer"
+          class="wrong"
+          required
+        />
+        <input
+          type="text"
+          name="text"
+          id="input4"
+          placeholder="Wrong Answer"
+          class="wrong"
+          required
+        />
+        <button id="count" class="mainBtns block" onclick="PushToArray();">
+          Add
+        </button>
+        <button class="mainBtns hide" id="startButton" onclick="StartQuiz()">
+          Start
+        </button>
+      </div>
+    </div>
+    <div id="content" class="container hide">
+      <p class="quizTitle" name="text">QUIZ</p>
+      <button id="question" class="question">
+        <p id="questionText" class="btnquestion">?</p>
+      </button>
+      <button id="answer1" onclick="checkAnswer(this.id);" class="ansBtns">
+        <p id="answerText1" class="btnquestion">Answer</p>
+      </button>
+      <button id="answer2" onclick="checkAnswer(this.id);" class="ansBtns">
+        <p id="answerText2" class="btnquestion">Answer</p>
+      </button>
+      <button id="answer3" onclick="checkAnswer(this.id);" class="ansBtns">
+        <p id="answerText3" class="btnquestion">Answer</p>
+      </button>
+      <button id="answer4" onclick="checkAnswer(this.id);" class="ansBtns">
+        <p id="answerText4" class="btnquestion">Answer</p>
+      </button>
+      <button id="nextButton" class="mainBtns hidden" onclick="nextQuestion()">
+        Next
+      </button>
+      <button class="mainBtns hidden" onclick="StartQuiz()">Start</button>
+    </div>
+  </body>
+</html>
